@@ -64,8 +64,8 @@ jobs:
           command: c
           cwd: ./
           files: |
-            ./api/dist
-            ./web/dist
+            /api/dist/
+            /web/dist/
             captain-definition-backend
             captain-definition-frontend
           outPath: deploy.tar
