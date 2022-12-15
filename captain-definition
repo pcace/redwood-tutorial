@@ -10,6 +10,5 @@
                         "EXPOSE 80",
                         "RUN ls -la",
                         "CMD [ \"yarn\", \"rw\" , \"serve\"  ]",
-                        "RUN ls -la",
                     ]
  }
