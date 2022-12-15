@@ -54,3 +54,23 @@ jobs:
       # run seed script in the actual db
       - run: yarn rw prisma db seed
 
+      # Future plans in the works to create tarball from within the caprover/deploy-from-github action.
+      - uses: a7ul/tar-action@v1.1.0
+        with:
+          command: c
+          cwd: "./"
+          files: |
+            api/dist/
+            web/dist/
+            captain-definition
+          outPath: deploy.tar
+
+      - uses: caprover/deploy-from-github@main
+        with:
+          server: '${{ secrets.CAPROVER_SERVER }}'
+          app: '${{ secrets.APP_NAME }}'
+          token: '${{ secrets.APP_TOKEN }}'
+          branch: '${{ secrets.DEPLOY_BRANCH }}' # optional
+          image: '${{ secrets.DEPLOY_IMAGE }}' # optional
+
+
