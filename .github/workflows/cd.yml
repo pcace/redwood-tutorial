@@ -63,7 +63,7 @@ jobs:
             api/dist/
             web/dist/
             captain-definition
-          outPath: deploy.tar
+          outPath: ./deploy.tar
 
       - uses: caprover/deploy-from-github@main
         with:
