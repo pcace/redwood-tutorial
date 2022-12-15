@@ -56,7 +56,12 @@ jobs:
 
       # Future plans in the works to create tarball from within the caprover/deploy-from-github action.
       - name: list Files
-        run : ls -la /home/runner/work/redwood-tutorial/redwood-tutorial
+        run : |
+         ls -la /home/runner/work/redwood-tutorial/redwood-tutorial
+         ls -la /home/runner/work/redwood-tutorial/redwood-tutorial/web
+         ls -la /home/runner/work/redwood-tutorial/redwood-tutorial/api
+         ls -la /home/runner/work/redwood-tutorial/redwood-tutorial/web/dist
+         ls -la /home/runner/work/redwood-tutorial/redwood-tutorial/api/dist
 
       # - uses: actions/checkout@master
       - name: Compress action step
