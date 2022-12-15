@@ -46,24 +46,29 @@ jobs:
       # build the redwood app
       - run: yarn rw build
       # run the api tests
-      - run: yarn rw test api --no-watch
+      #- run: yarn rw test api --no-watch
       # run the web tests
-      - run: yarn rw test web --no-watch
+      #- run: yarn rw test web --no-watch
       # run migrations on the actual database
       - run: yarn rw prisma migrate deploy
       # run seed script in the actual db
       - run: yarn rw prisma db seed
 
       # Future plans in the works to create tarball from within the caprover/deploy-from-github action.
-      - uses: a7ul/tar-action@v1.1.0
+
+      - uses: actions/checkout@master
+      - name: Compress action step
+        uses: a7ul/tar-action@v1.1.0
+        id: compress
         with:
           command: c
-          cwd: "./"
+          cwd: ./
           files: |
-            api/dist/
-            web/dist/
-            captain-definition
-          outPath: ./deploy.tar
+            ./api/dist
+            ./web/dist
+            captain-definition-backend
+            captain-definition-frontend
+          outPath: deploy.tar
 
       - uses: caprover/deploy-from-github@main
         with:
