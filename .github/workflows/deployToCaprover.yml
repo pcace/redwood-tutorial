@@ -30,6 +30,8 @@ jobs:
                   registry: ${{ env.DOCKER_REGISTRY }}
                   username: ${{ github.actor }}
                   password: ${{ secrets.GITHUB_TOKEN }}
+            - name: Make shellscript executable
+                  run: git update-index --chmod=+x ./.github/workflows/build_and_push.sh
             - name: Build and Push Release to DockerHub
               shell: bash
               run: git update-index --chmod=+x ./.github/workflows/build_and_push.sh
