@@ -71,8 +71,7 @@ jobs:
           command: c
           cwd: ./
           files: |
-            /home/runner/work/redwood-tutorial/redwood-tutorial/api/dist/
-            /home/runner/work/redwood-tutorial/redwood-tutorial/web/dist/
+            /home/runner/work/redwood-tutorial/redwood-tutorial/
             captain-definition
           outPath: deploy.tar
 
