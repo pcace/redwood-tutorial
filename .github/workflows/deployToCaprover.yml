@@ -34,7 +34,6 @@ jobs:
                   run: git update-index --chmod=+x ./.github/workflows/build_and_push.sh
             - name: Build and Push Release to DockerHub
               shell: bash
-              run: git update-index --chmod=+x ./.github/workflows/build_and_push.sh
               run: .github/workflows/build_and_push.sh
 
               # run: pwd
