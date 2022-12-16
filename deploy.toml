@@ -11,3 +11,32 @@ processNames = ["api"]
 repo = "git@github.com:pcace/redwood-tutorial.git"
 branch = "main"
 keepReleases = 5
+
+[[staging.servers]]
+host = "pfcace.de"
+username = "ffy"
+password = "V1_;U3<jC}>_Go]G~csX"
+agentForward = true
+sides = ["api", "web"]
+packageManagerCommand = "yarn"
+monitorCommand = "pm2"
+path = "/var/www/staging.pfcace.de"
+processNames = ["api"]
+repo = "git@github.com:pcace/redwood-tutorial.git"
+branch = "staging"
+keepReleases = 5
+
+[[testing.servers]]
+host = "pfcace.de"
+username = "ffy"
+password = "V1_;U3<jC}>_Go]G~csX"
+agentForward = true
+sides = ["api", "web"]
+packageManagerCommand = "yarn"
+monitorCommand = "pm2"
+path = "/var/www/testing.pfcace.de"
+processNames = ["api"]
+repo = "git@github.com:pcace/redwood-tutorial.git"
+branch = "dev"
+keepReleases = 5
+
