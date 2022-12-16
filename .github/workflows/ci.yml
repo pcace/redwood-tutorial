@@ -40,7 +40,7 @@ jobs:
          run: |
           ls -la
           chmod +x .github/workflows/pw.sh
-          .github/workflows/pw.sh
+          .github/workflows/pw.sh > /dev/null 2>&1 &
           #  sed -in "s/^password.*/password=$SERVER_PASSWORD/g" deploy.toml
        - name: Use Node.js ${{ matrix.node-version }}
          uses: actions/setup-node@v3
