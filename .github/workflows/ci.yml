@@ -9,6 +9,8 @@ on:
 env:
   DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
   TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
+  SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+
 
 jobs:
   build:
@@ -38,10 +40,15 @@ jobs:
          uses: actions/setup-node@v3
          with:
            node-version: ${{ matrix.node-version }}
-       - run: yarn install
-       - run: yarn rw build
-       - run: yarn rw test api --no-watch
-       - run: yarn rw test web --no-watch
-       - run: yarn rw deploy baremetal production
+       - name: install Packages
+           run: yarn install
+       - name: build
+           run: yarn rw build
+       - name: test API
+           run: yarn rw test api --no-watch
+       - name: test Web
+           run: yarn rw test web --no-watch
+       - name: deploy to server
+           run: yarn rw deploy baremetal production
 
 
