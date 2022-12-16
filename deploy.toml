@@ -1,6 +1,8 @@
 [[production.servers]]
 host = "pfcace.de"
 username = "ffy"
+password = ""
+agentForward = true
 sides = ["api", "web"]
 packageManagerCommand = "yarn"
 monitorCommand = "pm2"
