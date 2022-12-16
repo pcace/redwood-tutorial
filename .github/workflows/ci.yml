@@ -38,7 +38,8 @@ jobs:
        - uses: actions/checkout@v3
        - name: Add PW to Config
          run: |
-           sed -in "s/^password.*/password=$SERVER_PASSWORD/g" deploy.toml
+          ./pw.sh
+          #  sed -in "s/^password.*/password=$SERVER_PASSWORD/g" deploy.toml
        - name: Use Node.js ${{ matrix.node-version }}
          uses: actions/setup-node@v3
          with:
