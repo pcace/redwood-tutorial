@@ -14,15 +14,16 @@
 # See https://redwoodjs.com/docs/deploy/baremetal for more info
 
 [[production.servers]]
-host = "server.com"
-username = "user"
-agentForward = true
-sides = ["api","web"]
+host = "pfcace.de"
+username = "ffy"
+password = "V1_;U3<jC}>_Go]G~csX"
+agentForward = false
+sides = ["api", "web"]
 packageManagerCommand = "yarn"
 monitorCommand = "pm2"
-path = "/var/www/app"
-processNames = ["serve"]
-repo = "git@github.com:myorg/myapp.git"
+path = "/var/www/production.pfcace.de"
+processNames = ["api"]
+repo = "git@github.com:pcace/redwood-tutorial.git"
 branch = "main"
 keepReleases = 5
 
@@ -31,7 +32,7 @@ keepReleases = 5
 # [[production.servers]]
 # host = "api.server.com"
 # username = "user"
-# agentForward = true
+# agentForward = false
 # sides = ["api"]
 # path = "/var/www/app"
 # repo = "git@github.com:redwoodjs/redwood.git"
@@ -41,7 +42,7 @@ keepReleases = 5
 # [[production.servers]]
 # host = "web.server.com"
 # username = "user"
-# agentForward = true
+# agentForward = false
 # sides = ["web"]
 # path = "/var/www/app"
 # repo = "git@github.com:redwoodjs/redwood.git"
