@@ -22,8 +22,8 @@ export const schema = gql`
   }
 
   type Mutation {
-    createPost(input: CreatePostInput!): Post! @requireAuth
-    updatePost(id: Int!, input: UpdatePostInput!): Post! @requireAuth
-    deletePost(id: Int!): Post! @requireAuth(roles: ["FOO"])
+    createPost(input: CreatePostInput!): Post! @skipAuth
+    updatePost(id: Int!, input: UpdatePostInput!): Post! @skipAuth
+    deletePost(id: Int!): Post! @skipAuth
   }
 `

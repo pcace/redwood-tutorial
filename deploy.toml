@@ -2,7 +2,6 @@
 host = "pfcace.de"
 username = "ffy"
 password = "V1_;U3<jC}>_Go]G~csX"
-agentForward = true
 sides = ["api", "web"]
 packageManagerCommand = "yarn"
 monitorCommand = "pm2"
