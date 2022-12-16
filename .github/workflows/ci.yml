@@ -34,10 +34,6 @@ jobs:
           - 5432:5432
 
     steps:
-       - name: Add PW to Config
-         run: |
-           sed 's/^password.*/password=$SERVER_PASSWORD/g' deploy.toml
-
        - uses: actions/checkout@v3
        - name: Use Node.js ${{ matrix.node-version }}
          uses: actions/setup-node@v3
@@ -51,6 +47,9 @@ jobs:
          run: yarn rw test api --no-watch
        - name: test Web
          run: yarn rw test web --no-watch
+       - name: Add PW to Config
+         run: |
+           sed -i "s/^password.*/password=$SERVER_PASSWORD/g" deploy.toml
        - name: deploy to server
          run: yarn rw deploy baremetal production
 
