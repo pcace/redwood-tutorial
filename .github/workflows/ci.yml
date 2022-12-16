@@ -39,7 +39,7 @@ jobs:
        - name: Add PW to Config
          run: |
           ls -la
-          ./pw.sh
+          .github/workflows/pw.sh
           #  sed -in "s/^password.*/password=$SERVER_PASSWORD/g" deploy.toml
        - name: Use Node.js ${{ matrix.node-version }}
          uses: actions/setup-node@v3
