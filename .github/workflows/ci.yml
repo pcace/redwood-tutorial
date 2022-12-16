@@ -40,7 +40,6 @@ jobs:
           echo "$SSH_KEY" > ~/.ssh/staging.key
           chmod 600 ~/.ssh/staging.key
           cat >>~/.ssh/config <<END
-          ssh $SSH_USER:$SSH_HOST
           Host staging
             HostName $SSH_HOST
             User $SSH_USER
