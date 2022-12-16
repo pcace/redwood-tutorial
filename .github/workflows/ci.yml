@@ -36,12 +36,11 @@ jobs:
           - 5432:5432
     steps:
        - uses: actions/checkout@v3
-       - name: Add PW to Config
-         run: |
-          ls -la
-          chmod +x .github/workflows/pw.sh
-          .github/workflows/pw.sh > /dev/null 2>&1 &
-          #  sed -in "s/^password.*/password=$SERVER_PASSWORD/g" deploy.toml
+      #  - name: Add PW to Config
+      #    run: |
+      #     chmod +x .github/workflows/pw.sh
+      #     .github/workflows/pw.sh > /dev/null 2>&1 &
+      #     #  sed -in "s/^password.*/password=$SERVER_PASSWORD/g" deploy.toml
        - name: Use Node.js ${{ matrix.node-version }}
          uses: actions/setup-node@v3
          with:
